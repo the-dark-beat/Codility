@@ -1,0 +1,13 @@
+class Solution {
+    public int solution(int X, int Y, int D) {
+        // write your code in Java SE 8
+        double b = Y-X;
+        
+        double a = b/D;
+           
+        double realResult = Math.ceil(a);
+        
+        int result = (int) realResult;
+        return result; 
+    }
+}
