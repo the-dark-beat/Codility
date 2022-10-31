@@ -1,0 +1,16 @@
+class Solution {
+    public int solution(int[] A) {
+       if(A.length == 0){
+           return 0;
+       }
+
+       int unpaired;
+       unpaired = A[0];
+
+       for(int i =1;i<A.length;i++){unpaired = unpaired ^ A[i];}
+   return unpaired;
+   
+   
+   
+    }
+}
