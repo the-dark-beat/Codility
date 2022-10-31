@@ -1,0 +1,20 @@
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 8
+
+
+        int a = A.length+1;
+
+        int suM = a*(a+1)/2;
+
+        int restSum = 0;
+
+        for(int i=0;i<A.length;i++){
+            restSum += A[i];
+        }
+        int missingNumber = suM-restSum;
+
+        return missingNumber;
+    }
+}
