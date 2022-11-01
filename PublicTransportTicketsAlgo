@@ -1,0 +1,24 @@
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 8
+        int size = A.length;
+        int [] Cost = new int[size];
+        int d = 0, d7 =0, d30 =0;
+
+        for(int i = 0; i < size; i++){
+              d += 2;
+
+              if(i>0){
+                  while(i < size && i > d30 && A[i] -A[d30] >= 30)
+                    d30++;
+                  
+                  while(i < size && i > d7 && A[i] -A[d7] >= 7)
+                      d7++;
+                  
+                  d = d30 == 0 ? Math.min(d, 25) : Math.min(d, Cost[d30 - 1] + 25);
+                  d = d7 == 0 ? Math.min(d, 7) : Math.min(d, Cost[d7 - 1] + 7);
+              }  
+            Cost[i] = d;
+        }
+        return d;
+    }
